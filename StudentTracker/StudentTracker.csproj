@@ -63,6 +63,10 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="StudentTracker.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\StudentTrackerService\StudentTracker.Domain\bin\Debug\StudentTracker.Domain.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -430,10 +434,6 @@
     <ProjectReference Include="..\StudentTracker.BLL\StudentTracker.BLL.csproj">
       <Project>{c507b13f-e140-4153-ab49-67aecb5f8d07}</Project>
       <Name>StudentTracker.BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\StudentTracker.Domain\StudentTracker.Domain.csproj">
-      <Project>{4fad0077-dd9b-4093-a638-a5cb34cebadc}</Project>
-      <Name>StudentTracker.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

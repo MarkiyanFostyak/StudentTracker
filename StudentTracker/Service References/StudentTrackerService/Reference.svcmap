@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9e4e6e59-a65d-4924-a036-d676d3a2302a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="42d789ab-d362-4d87-b2cb-72fe14512ba8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,13 +22,13 @@
     <MetadataSource Address="http://localhost:55891/StudentTrackerService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="StudentTrackerService.xsd" MetadataType="Schema" ID="1147892c-7f02-4687-8e4b-9762c26fca7e" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?xsd=xsd4" />
-    <MetadataFile FileName="StudentTrackerService.wsdl" MetadataType="Wsdl" ID="05f5a691-2656-4e24-aec3-3b6aafb5f21d" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?wsdl" />
-    <MetadataFile FileName="StudentTrackerService.disco" MetadataType="Disco" ID="8dccdc76-0a2a-4bea-9ad8-1e49cb960d1a" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?disco" />
-    <MetadataFile FileName="StudentTrackerService1.xsd" MetadataType="Schema" ID="aa5b150b-99c9-4c8f-a226-26d67d18629c" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?xsd=xsd0" />
-    <MetadataFile FileName="StudentTrackerService2.xsd" MetadataType="Schema" ID="72760c22-888e-4ef3-aa1c-5c3ff678671c" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?xsd=xsd1" />
-    <MetadataFile FileName="StudentTrackerService3.xsd" MetadataType="Schema" ID="85806116-a232-492c-9786-9dc88815e116" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?xsd=xsd2" />
-    <MetadataFile FileName="StudentTrackerService4.xsd" MetadataType="Schema" ID="bdb7ac67-5112-4018-b119-e202c7be264a" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?xsd=xsd3" />
+    <MetadataFile FileName="StudentTrackerService.xsd" MetadataType="Schema" ID="77610bbf-cfce-4c5b-bca9-6eac6b19a351" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?xsd=xsd4" />
+    <MetadataFile FileName="StudentTrackerService.wsdl" MetadataType="Wsdl" ID="cffc7fc9-01cc-4a49-b71a-ccafcac29428" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?wsdl" />
+    <MetadataFile FileName="StudentTrackerService.disco" MetadataType="Disco" ID="39a4b6a1-183f-432c-b3fc-d2d9ccbb66e7" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?disco" />
+    <MetadataFile FileName="StudentTrackerService1.xsd" MetadataType="Schema" ID="b02deeea-3c23-4c58-83c9-2c80f85c9ee3" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?xsd=xsd0" />
+    <MetadataFile FileName="StudentTrackerService2.xsd" MetadataType="Schema" ID="8440384f-ff52-44c7-bffd-3b658d9b76f2" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?xsd=xsd1" />
+    <MetadataFile FileName="StudentTrackerService3.xsd" MetadataType="Schema" ID="4fbfbf04-daa2-4647-ab3f-abb8ec3013e3" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?xsd=xsd2" />
+    <MetadataFile FileName="StudentTrackerService4.xsd" MetadataType="Schema" ID="60d048fd-ba07-4b57-bdce-5a57f5114695" SourceId="1" SourceUrl="http://localhost:55891/StudentTrackerService.svc?xsd=xsd3" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

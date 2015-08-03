@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StudentTracker.Domain.Entities;
+using StudentTrackerService;
 
 namespace StudentTracker.BLL
 {

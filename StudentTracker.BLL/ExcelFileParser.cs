@@ -8,8 +8,6 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.Office.Interop.Excel;
 using OfficeOpenXml;
-using StudentTracker.Domain.Concrete;
-using StudentTracker.Domain.Entities;
 
 namespace StudentTracker.BLL
 {
