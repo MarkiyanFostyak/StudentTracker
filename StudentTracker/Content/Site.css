@@ -1,0 +1,120 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+/*input[type="text"],
+input[type="password"] {
+    max-width: 280px;
+}*/
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+
+    .body-content {
+        padding: 0;
+    }
+}
+
+.button-group-div {
+    margin-top: 25px;
+}
+
+.toolbar-button {
+    display: block;
+    width: 100%;
+}
+
+.gridview-cont {
+    margin-top: 10px;
+}
+
+.label-adding {
+    margin-top: 10px;
+}
+
+.black-color {
+    background-color: #333333;
+    color: #999999;
+}
+
+    .black-color:hover {
+        color: white;
+    }
+
+.upload-cont {
+    margin-top: 25px;
+    padding: 10px;
+    border: 1px solid #eeeeee;
+    border-radius: 5px;
+}
+
+.upload-conrtol {
+    margin-top: 10px;
+}
+
+.validation-error-message {
+    color: maroon;
+}
+
+.dropdown-menu > li > a:hover {
+    background-color: #333333;
+}
+
+.nav .caret {
+    border-top-color: #999999;
+    border-bottom-color: #999999;
+}
+
+.nav a:hover .caret {
+    border-top-color: #ffffff;
+    border-bottom-color: #ffffff;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.flexible-table tr td:last-child {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.datailsCell {
+    cursor: pointer;
+}
+
+.edit-student-cont {
+    margin-top: 10px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border: 2px solid #eeeeee;
+    border-radius: 5px;
+}
+
+.preview-cont {
+    border: 2px solid #eeeeee;
+    border-radius: 5px;  
+    background-color: white;
+}
+
+.preview-body {
+    margin-bottom: 50px;
+}
+
+.colour-input {
+    margin-bottom: 20px;
+}
+

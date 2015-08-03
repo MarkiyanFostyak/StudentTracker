@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Bootstrap.Colorpicker.2</id>
+    <version>2.0.1</version>
+    <title>Bootstrap Colorpicker 2.0</title>
+    <authors>Javier Aguilar, Stefan Petre</authors>
+    <owners>Javier Aguilar, Stefan Petre</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Colorpicker plugin for the Twitter Bootstrap toolkit. It basically adds a color picker to a field or any other element.</description>
+    <summary>Colorpicker plugin for Twitter Bootstrap 2.x</summary>
+  </metadata>
+</package>

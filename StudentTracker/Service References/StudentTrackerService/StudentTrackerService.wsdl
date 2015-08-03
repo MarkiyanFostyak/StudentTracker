@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="StudentTrackerService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55891/StudentTrackerService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55891/StudentTrackerService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55891/StudentTrackerService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/StudentTrackerService" />
+      <xsd:import schemaLocation="http://localhost:55891/StudentTrackerService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/StudentTracker.Domain.Entities" />
+      <xsd:import schemaLocation="http://localhost:55891/StudentTrackerService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICoursesManager_GetCourses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCourses" />
+  </wsdl:message>
+  <wsdl:message name="ICoursesManager_GetCourses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICoursesManager_DeleteCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCourse" />
+  </wsdl:message>
+  <wsdl:message name="ICoursesManager_DeleteCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICoursesManager_AddCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCourse" />
+  </wsdl:message>
+  <wsdl:message name="ICoursesManager_AddCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICoursesManager_UpdateCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCourse" />
+  </wsdl:message>
+  <wsdl:message name="ICoursesManager_UpdateCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_SaveStudents_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStudents" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_SaveStudents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStudentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetRecords_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecords" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetRecords_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRecordsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudent" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetStudents_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudents" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetStudents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetStudentsCourses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentsCourses" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetStudentsCourses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentsCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_ApplyForCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyForCourse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_ApplyForCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ApplyForCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_LeaveCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveCourse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_LeaveCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LeaveCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetStudentFullName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentFullName" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetStudentFullName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentFullNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_UpdateStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStudent" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_UpdateStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetStudentsSex_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentsSex" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetStudentsSex_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStudentsSexResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetUiColours_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUiColours" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetUiColours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUiColoursResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetUiColoursByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUiColoursByName" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_GetUiColoursByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUiColoursByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_SetUiColours_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetUiColours" />
+  </wsdl:message>
+  <wsdl:message name="IStudentsManager_SetUiColours_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetUiColoursResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICoursesManager">
+    <wsdl:operation name="GetCourses">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICoursesManager/GetCourses" message="tns:ICoursesManager_GetCourses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICoursesManager/GetCoursesResponse" message="tns:ICoursesManager_GetCourses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICoursesManager/DeleteCourse" message="tns:ICoursesManager_DeleteCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICoursesManager/DeleteCourseResponse" message="tns:ICoursesManager_DeleteCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICoursesManager/AddCourse" message="tns:ICoursesManager_AddCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICoursesManager/AddCourseResponse" message="tns:ICoursesManager_AddCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICoursesManager/UpdateCourse" message="tns:ICoursesManager_UpdateCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICoursesManager/UpdateCourseResponse" message="tns:ICoursesManager_UpdateCourse_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IStudentsManager">
+    <wsdl:operation name="SaveStudents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/SaveStudents" message="tns:IStudentsManager_SaveStudents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/SaveStudentsResponse" message="tns:IStudentsManager_SaveStudents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRecords">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/GetRecords" message="tns:IStudentsManager_GetRecords_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/GetRecordsResponse" message="tns:IStudentsManager_GetRecords_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/GetStudent" message="tns:IStudentsManager_GetStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/GetStudentResponse" message="tns:IStudentsManager_GetStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/GetStudents" message="tns:IStudentsManager_GetStudents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/GetStudentsResponse" message="tns:IStudentsManager_GetStudents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsCourses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/GetStudentsCourses" message="tns:IStudentsManager_GetStudentsCourses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/GetStudentsCoursesResponse" message="tns:IStudentsManager_GetStudentsCourses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ApplyForCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/ApplyForCourse" message="tns:IStudentsManager_ApplyForCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/ApplyForCourseResponse" message="tns:IStudentsManager_ApplyForCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/LeaveCourse" message="tns:IStudentsManager_LeaveCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/LeaveCourseResponse" message="tns:IStudentsManager_LeaveCourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentFullName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/GetStudentFullName" message="tns:IStudentsManager_GetStudentFullName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/GetStudentFullNameResponse" message="tns:IStudentsManager_GetStudentFullName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/UpdateStudent" message="tns:IStudentsManager_UpdateStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/UpdateStudentResponse" message="tns:IStudentsManager_UpdateStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsSex">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/GetStudentsSex" message="tns:IStudentsManager_GetStudentsSex_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/GetStudentsSexResponse" message="tns:IStudentsManager_GetStudentsSex_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUiColours">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/GetUiColours" message="tns:IStudentsManager_GetUiColours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/GetUiColoursResponse" message="tns:IStudentsManager_GetUiColours_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUiColoursByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/GetUiColoursByName" message="tns:IStudentsManager_GetUiColoursByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/GetUiColoursByNameResponse" message="tns:IStudentsManager_GetUiColoursByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetUiColours">
+      <wsdl:input wsaw:Action="http://tempuri.org/IStudentsManager/SetUiColours" message="tns:IStudentsManager_SetUiColours_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IStudentsManager/SetUiColoursResponse" message="tns:IStudentsManager_SetUiColours_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICoursesManager" type="tns:ICoursesManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetCourses">
+      <soap:operation soapAction="http://tempuri.org/ICoursesManager/GetCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCourse">
+      <soap:operation soapAction="http://tempuri.org/ICoursesManager/DeleteCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCourse">
+      <soap:operation soapAction="http://tempuri.org/ICoursesManager/AddCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCourse">
+      <soap:operation soapAction="http://tempuri.org/ICoursesManager/UpdateCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IStudentsManager" type="tns:IStudentsManager">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SaveStudents">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/SaveStudents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRecords">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/GetRecords" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudent">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/GetStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudents">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/GetStudents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsCourses">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/GetStudentsCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApplyForCourse">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/ApplyForCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveCourse">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/LeaveCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentFullName">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/GetStudentFullName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateStudent">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/UpdateStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStudentsSex">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/GetStudentsSex" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUiColours">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/GetUiColours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUiColoursByName">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/GetUiColoursByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetUiColours">
+      <soap:operation soapAction="http://tempuri.org/IStudentsManager/SetUiColours" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="StudentTrackerService">
+    <wsdl:port name="BasicHttpBinding_ICoursesManager" binding="tns:BasicHttpBinding_ICoursesManager">
+      <soap:address location="http://localhost:55891/StudentTrackerService.svc" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IStudentsManager" binding="tns:BasicHttpBinding_IStudentsManager">
+      <soap:address location="http://localhost:55891/StudentTrackerService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/StudentTrackerService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/StudentTrackerService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:55891/StudentTrackerService.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ArrayOfCourseInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CourseInfo" nillable="true" type="tns:CourseInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCourseInfo" nillable="true" type="tns:ArrayOfCourseInfo" />
+  <xs:complexType name="CourseInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CourseName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CurrentlyAssigned" type="xs:int" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="MaxAssigned" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CourseInfo" nillable="true" type="tns:CourseInfo" />
+  <xs:complexType name="ArrayOfRawStudentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="RawStudentInfo" nillable="true" type="tns:RawStudentInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRawStudentInfo" nillable="true" type="tns:ArrayOfRawStudentInfo" />
+  <xs:complexType name="RawStudentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RawStudentInfo" nillable="true" type="tns:RawStudentInfo" />
+  <xs:complexType name="ExcelDocumentImportResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="InvalidRecords" nillable="true" type="tns:ArrayOfInvalidRecord" />
+      <xs:element minOccurs="0" name="ValidRecords" nillable="true" type="tns:ArrayOfRawStudentInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExcelDocumentImportResult" nillable="true" type="tns:ExcelDocumentImportResult" />
+  <xs:complexType name="ArrayOfInvalidRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="InvalidRecord" nillable="true" type="tns:InvalidRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfInvalidRecord" nillable="true" type="tns:ArrayOfInvalidRecord" />
+  <xs:complexType name="InvalidRecord">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:RawStudentInfo">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Comment" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="InvalidRecord" nillable="true" type="tns:InvalidRecord" />
+  <xs:complexType name="StudentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Age" type="xs:int" />
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="Courses" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Sex" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StudentInfo" nillable="true" type="tns:StudentInfo" />
+  <xs:complexType name="ArrayOfStudentInfo">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StudentInfo" nillable="true" type="tns:StudentInfo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStudentInfo" nillable="true" type="tns:ArrayOfStudentInfo" />
+  <xs:complexType name="ArrayOfStudentCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="StudentCourse" nillable="true" type="tns:StudentCourse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStudentCourse" nillable="true" type="tns:ArrayOfStudentCourse" />
+  <xs:complexType name="StudentCourse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AssignedStudents" type="xs:int" />
+      <xs:element minOccurs="0" name="CourseName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="IsActive" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsAppliedFor" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MaxStudents" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StudentCourse" nillable="true" type="tns:StudentCourse" />
+  <xs:complexType name="UiSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BackgroundColour" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="HeaderColour" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UiSettings" nillable="true" type="tns:UiSettings" />
+</xs:schema>

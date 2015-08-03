@@ -1,0 +1,122 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="StudentTracker.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - Student Tracker</title>
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link href="http://cdn.datatables.net/1.10.0/css/jquery.dataTables.css" rel="stylesheet" type="text/css">
+    <link href="//cdn.datatables.net/tabletools/2.2.1/css/dataTables.tableTools.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" media="screen" type="text/css" href="Content/css/bootstrap-colorpicker.css" />
+    <link rel="stylesheet" media="screen" type="text/css" href="Content/css/bootstrap-colorpicker.min.css" />
+</head>
+<body runat="server" id="masterPageBody">
+    <form runat="server" id="form1">
+        <asp:ScriptManager runat="server" EnablePageMethods="true" EnablePartialRendering="True">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Path="~/Scripts/coursesgrid.validation.js" />
+                <asp:ScriptReference Path="~/Scripts/students.functions.js" />
+                <asp:ScriptReference Path="~/Scripts/student.edit.validation.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.dataTables.js" />
+                <asp:ScriptReference Path="~/Scripts/jquery.dataTables.min.js" />
+                <asp:ScriptReference Path="~/Scripts/bootstrap-colorpicker.js" />
+                <asp:ScriptReference Path="~/Scripts/bootstrap-colorpicker.min.js" />
+                <asp:ScriptReference Path="~/Scripts/ui.configuration.js" />
+                <asp:ScriptReference Path="//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <div runat="server" id="masterPageHeader" class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">
+                        <asp:Literal runat="server" ID="NavBarHeader" meta:resourcekey="NavBarHeaderResource"></asp:Literal></a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li><a runat="server" href="~/">
+                            <asp:Literal runat="server" ID="NavBarLinkHome" meta:resourcekey="NavBarLinkHomeResource"></asp:Literal></a></li>
+                        <li><a runat="server" href="~/About">
+                            <asp:Literal runat="server" ID="NavBarLinkAbout" meta:resourcekey="NavBarLinkAboutResource"></asp:Literal></a></li>
+                        <%-- <li><a runat="server" href="~/Contact">
+                            <asp:Literal runat="server" ID="NavBarLinkContact" meta:resourcekey="NavBarLinkContactResource"></asp:Literal></a></li>--%>
+                        <li><a runat="server" href="~/ImportData">
+                            <asp:Literal runat="server" ID="NavBarLinkImportData" meta:resourcekey="NavBarLinkImportDataResource"></asp:Literal></a></li>
+                        <li><a runat="server" href="~/ManageCourses">
+                            <asp:Literal runat="server" ID="NavBarLinkManageCourses" meta:resourcekey="NavBarLinkManageCoursesResource"></asp:Literal></a></li>
+                        <li><a runat="server" href="~/Students">
+                            <asp:Literal runat="server" ID="NavBarLinkStudents" meta:resourcekey="NavBarLinkStudentsResource"></asp:Literal></a></li>
+                        <li><a runat="server" href="~/UiConfiguration" id="uiConfigLink">
+                            <asp:Literal runat="server" ID="NavBarLinkUi" meta:resourcekey="NavBarLinkUiResource"></asp:Literal></a></li>
+                    </ul>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Register">
+                                    <asp:Literal runat="server" ID="NavBarLinkRegister" meta:resourcekey="NavBarLinkRegisterResource"></asp:Literal></a></li>
+                                <li><a runat="server" href="~/Account/Login">
+                                    <asp:Literal runat="server" ID="NavBarLinkLogIn" meta:resourcekey="NavBArLinkLogInResource"></asp:Literal></a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        <LoggedInTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">
+                                    <asp:Literal runat="server" ID="NavBarLinkHello" meta:resourcekey="NavBarLinkManageHelloResource"></asp:Literal>, <%: Context.User.Identity.GetUserName()  %> !</a> </li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" meta:resourcekey="LoginStatusResource" />
+                                </li>
+                            </ul>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                </div>
+            </div>
+        </div>
+        <div runat="server" class="container body-content" id="contentDiv">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+                <div class="col-md-6">
+                    <p>&copy; <%: DateTime.Now.Year %> - Student Tracker</p>
+                </div>
+                <div class="text-right col-md-3 col-md-offset-3">
+                    <asp:DropDownList ID="ddlLanguage" runat="server"
+                        OnSelectedIndexChanged="LanguageChanged"
+                        AutoPostBack="true" CssClass="form-control">
+                        <asp:ListItem Text="English" Value="en-US" />
+                        <asp:ListItem Text="Українська" Value="uk-UA" />
+                    </asp:DropDownList>
+                </div>
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
